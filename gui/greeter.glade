@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Generated with glade 3.38.2 -->
+<interface>
+  <requires lib="gtk+" version="3.24"/>
+  <object class="GtkImage" id="image1">
+    <property name="visible">True</property>
+    <property name="can-focus">False</property>
+    <property name="stock">gtk-open</property>
+  </object>
+  <object class="GtkTextBuffer" id="textbuffer1">
+    <property name="text" translatable="yes">Please enter the metadata and pick the directory that contains the image files (e.g. "Experiment 1a"). The folder name will be propagated as the main label for the experiment. The data should follow this folder structure,  where "level 1" contains the raw data. "level 2" and "level 3" will contain processed data. Press "Done" after you are finished entering the metadata.
+
+ .
+├── level 1
+│   ├── Experiment 1a
+│   └── Experiment 1b
+├── level 2
+└── level 3
+</property>
+  </object>
+  <object class="GtkWindow" id="main">
+    <property name="can-focus">False</property>
+    <child>
+      <object class="GtkFixed">
+        <property name="width-request">820</property>
+        <property name="height-request">530</property>
+        <property name="visible">True</property>
+        <property name="can-focus">False</property>
+        <child>
+          <object class="GtkLabel">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="label" translatable="yes">Pick Directory</property>
+          </object>
+          <packing>
+            <property name="x">5</property>
+            <property name="y">20</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="label" translatable="yes">Operator</property>
+          </object>
+          <packing>
+            <property name="x">5</property>
+            <property name="y">70</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="label" translatable="yes">Drop V. (L)</property>
+          </object>
+          <packing>
+            <property name="x">5</property>
+            <property name="y">170</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="coolingrate">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="label" translatable="yes">Cooling (K/min)</property>
+          </object>
+          <packing>
+            <property name="x">5</property>
+            <property name="y">120</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="label" translatable="yes">Date</property>
+          </object>
+          <packing>
+            <property name="x">440</property>
+            <property name="y">20</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkCalendar" id="datecollected">
+            <property name="width-request">310</property>
+            <property name="height-request">240</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="year">2022</property>
+            <property name="month">5</property>
+            <property name="day">30</property>
+          </object>
+          <packing>
+            <property name="x">490</property>
+            <property name="y">12</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="directorybutton">
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="receives-default">True</property>
+            <property name="image">image1</property>
+            <property name="always-show-image">True</property>
+          </object>
+          <packing>
+            <property name="x">120</property>
+            <property name="y">12</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkEntry" id="directory">
+            <property name="width-request">250</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="editable">False</property>
+          </object>
+          <packing>
+            <property name="x">160</property>
+            <property name="y">12</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkEntry" id="operator">
+            <property name="width-request">290</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+          </object>
+          <packing>
+            <property name="x">120</property>
+            <property name="y">62</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkEntry" id="coolingrat">
+            <property name="width-request">290</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="text" translatable="yes">2</property>
+          </object>
+          <packing>
+            <property name="x">120</property>
+            <property name="y">112</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkEntry" id="dropvolume">
+            <property name="width-request">290</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="text" translatable="yes">1e-6</property>
+          </object>
+          <packing>
+            <property name="x">120</property>
+            <property name="y">162</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkTextView">
+            <property name="width-request">680</property>
+            <property name="height-request">120</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="wrap-mode">word</property>
+            <property name="buffer">textbuffer1</property>
+          </object>
+          <packing>
+            <property name="x">120</property>
+            <property name="y">270</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="sample">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="label" translatable="yes">Sample Tag</property>
+          </object>
+          <packing>
+            <property name="x">5</property>
+            <property name="y">220</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkEntry" id="sampletag">
+            <property name="width-request">290</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+          </object>
+          <packing>
+            <property name="x">120</property>
+            <property name="y">212</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="sample1">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="label" translatable="yes">Instructions</property>
+          </object>
+          <packing>
+            <property name="x">5</property>
+            <property name="y">270</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+    <child type="titlebar">
+      <object class="GtkHeaderBar">
+        <property name="visible">True</property>
+        <property name="can-focus">False</property>
+        <property name="title" translatable="yes">CIF-Cold-Stage</property>
+        <property name="subtitle" translatable="yes">Folder Selection and Metadata</property>
+        <child>
+          <object class="GtkButton" id="done">
+            <property name="label" translatable="yes">Done</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="receives-default">True</property>
+          </object>
+          <packing>
+            <property name="pack-type">end</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>
