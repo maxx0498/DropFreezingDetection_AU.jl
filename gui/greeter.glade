@@ -213,7 +213,7 @@
         <property name="subtitle" translatable="yes">Folder Selection and Metadata</property>
         <child>
           <object class="GtkButton" id="done">
-            <property name="label" translatable="yes">Done</property>
+            <property name="label" translatable="yes">Finished</property>
             <property name="visible">True</property>
             <property name="can-focus">True</property>
             <property name="receives-default">True</property>
