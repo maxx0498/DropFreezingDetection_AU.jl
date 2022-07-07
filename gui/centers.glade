@@ -147,6 +147,13 @@
       </object>
     </child>
   </object>
+  <object class="GtkTextBuffer" id="textbuffer1">
+    <property name="text" translatable="yes">Each circle represents a drop. Initially the placement of the drops is detected using image analysis techniques.  Occasionally,  this analysis fails to identify a drop  or incorrectly places a drop. Click on the image to add drops. Use to the toggle button to the left to switch to "Remove Drops" If selected, the nearest neighbor of the click will be removed. Press "Finished" after all drops are properly indicated.
+
+Bad or different contrast may result in poor edge detection. The image to the right shows the current output of the edge detection algorithm. Change the spatial scale parameter (value in the spin box) and press "Recalculate Edges" to improve the detection.
+
+Alternatively, press "Delete All" to delete all automatically detected drops and then place drop centers manually.</property>
+  </object>
   <object class="GtkWindow" id="help">
     <property name="width-request">0</property>
     <property name="height-request">60</property>
@@ -180,7 +187,7 @@
         <property name="title" translatable="yes">Help</property>
         <child>
           <object class="GtkButton" id="helpexit">
-            <property name="label" translatable="yes">Done</property>
+            <property name="label" translatable="yes">Finished</property>
             <property name="visible">True</property>
             <property name="can-focus">True</property>
             <property name="receives-default">True</property>
@@ -191,12 +198,5 @@
         </child>
       </object>
     </child>
-  </object>
-  <object class="GtkTextBuffer" id="textbuffer1">
-    <property name="text" translatable="yes">Each circle represents a drop. Initially the placement of the drops is detected using image analysis techniques.  Occasionally,  this analysis fails to identify a drop  or incorrectly places a drop. Click on the image to add drops. Use to the toggle button to the left to switch to "Remove Drops" If selected, the nearest neighbor of the click will be removed. Press "Finished" after all drops are properly indicated.
-
-Bad or different contrast may result in poor edge detection. The image to the right shows the current output of the edge detection algorithm. Change the spatial scale parameter (value in the spin box) and press "Recalculate Edges" to improve the detection.
-
-Alternatively, press "Delete All" to delete all automatically detected drops and then place drop centers manually.</property>
   </object>
 </interface>
