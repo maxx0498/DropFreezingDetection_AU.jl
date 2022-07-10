@@ -2,7 +2,7 @@
 GUI software written in Julia to analyze drop freezing spectra from ice nucleation cold-stage measurements.
 
 # About
-This is a Julia language implementation of the [Drop-Freezing-Detection](https://github.com/CIF-Cold-Stage/Drop-Freezing-Detection) MATLAB code. The goals for the rewrite as as follows:
+This is a Julia language implementation of the [Drop-Freezing-Detection](https://github.com/CIF-Cold-Stage/Drop-Freezing-Detection) MATLAB code. The goals for the rewrite was as follows:
 - Removal of the need to purchase a MATLAB license to run the code
 - Application of a proper GUI toolkit
 - Significant speedup of the data processing 
@@ -14,7 +14,7 @@ This is a Julia language implementation of the [Drop-Freezing-Detection](https:/
 **This work was supported by grant NSF AGS-2112978.**
 
 # Installation
-[Download](https://github.com/CIF-Cold-Stage/DropFreezingDetection.jl/archive/refs/heads/main.zip) the software through and extract the files. Alternatively, clone the directry using git
+[Download](https://github.com/CIF-Cold-Stage/DropFreezingDetection.jl/archive/refs/heads/main.zip) the software and extract the files. Alternatively, clone the directry using git
 
 ```bash
 [user@host ~]$ git clone https://github.com/CIF-Cold-Stage/DropFreezingDetection.jl.git
