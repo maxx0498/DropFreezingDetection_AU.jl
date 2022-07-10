@@ -1,0 +1,8 @@
+NC State Cold-Stage: Metadata File
+Raw Data Directory: level 1/Experiment 2
+Sample Description: 
+Data Originator: 
+Date Collected: 2022-07-10
+Stage Cooling Rate: 2.0 K/min
+Drop Volume: 1.0e-06 L
+Number Accepted Drops: 103
