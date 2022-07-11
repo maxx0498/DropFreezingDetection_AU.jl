@@ -14,13 +14,16 @@ This is a Julia language implementation of the [Drop-Freezing-Detection](https:/
 **This work was supported by grant NSF AGS-2112978.**
 
 # Installation
-[Download](https://github.com/CIF-Cold-Stage/DropFreezingDetection.jl/archive/refs/heads/main.zip) the software and extract the files. Alternatively, clone the directry using git
+
+**Below are generic instruction assuming that you have access to a regular terminal. Scroll to the end of this page for MS Windows specific notes**
+
+[Download](https://github.com/CIF-Cold-Stage/DropFreezingDetection.jl/archive/refs/heads/main.zip) the software and extract the files. Alternatively, clone the directory using git
 
 ```bash
 [user@host ~]$ git clone https://github.com/CIF-Cold-Stage/DropFreezingDetection.jl.git
 ```
 
-The software is written in the Julia language. It should work on all platforms. The GUI toolkit is Gtk, which works best under Linux. Windows and Mac OS users may need to install some additional fonts. To install, download the current stable release [https://julialang.org/downloads/](https://julialang.org/downloads/) and install it on your computer.
+The software is written in the Julia language. It should work on all platforms. The GUI toolkit is Gtk, which works best under Linux. To install, download the current stable release [https://julialang.org/downloads/](https://julialang.org/downloads/) and install it on your computer.
  
 Using a terminal emulator, navigate to the directory ```DropFreezingDetection/src``` and start julia with the project flag. 
 
@@ -172,3 +175,52 @@ After a system image is created, the software can be started as follows
 ```bash
 [user@host src]$ julia --project --sysimage sys_daq.so main.jl
 ```
+
+# MS Windows Specific Notes
+
+The software works just fine on MS Windows. However, terminal support on Windows is not that great. It is recommended to install git bash for Windows: [https://git-scm.com/downloads](https://git-scm.com/downloads)
+
+Download the current stable release for Windows from [https://julialang.org/downloads/](https://julialang.org/downloads/) and install it on your computer.
+
+Run the git bash and clone the directory. In the example below it will be cloned into the ```Documents``` folder.
+
+![](doc/assets/gitbash.png)
+
+```bash
+$ cd Documents/
+$ git clone https://github.com/CIF-Cold-Stage/DropFreezingDetection.jl.git
+```
+
+Change into the directory and invoke the Julia executable. You will need to adjust the path for your user name and Julia version. 
+
+![](doc/assets/gitbash_julia.png)
+
+```bash
+$ cd Documents/DropFreezingDetection/src/
+$ 'C:\Users\Markus Petters\AppData\Local\Program\Julia-1.6.5\bin\julia.exe' --project
+```
+
+The program can now be invoked using 
+
+```julia
+julia> include("main.jl") 
+```
+
+and otherwise executed as described above. **The system image can also be compiled as described above**
+
+
+```julia
+julia> include("make_sysimg.jl") 
+```
+
+ ![](doc/assets/gitbash_sysimage.png)
+
+The optimized installation can be called via
+
+```bash
+$ cd Documents/DropFreezingDetection/src/
+$ 'C:\Users\Markus Petters\AppData\Local\Program\Julia-1.6.5\bin\julia.exe' --sysimage sys_daq.so --project main.jl
+```
+
+ ![](doc/assets/gitbash_invoke.png)
+
