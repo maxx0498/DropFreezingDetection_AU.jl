@@ -197,7 +197,7 @@ Change into the directory and invoke the Julia executable. You will need to adju
 
 ```bash
 $ cd Documents/DropFreezingDetection/src/
-$ 'C:\Users\'$(whoami)'\AppData\Local\Programs\Julia-1.6.5\bin\julia.exe' --project
+$ 'C:\Users\Markus Petters\AppData\Local\Programs\Julia-1.6.5\bin\julia.exe' --project
 ```
 
 The program can now be invoked using 
@@ -219,7 +219,7 @@ The optimized installation can be called via
 
 ```bash
 $ cd Documents/DropFreezingDetection/src/
-$ 'C:\Users\'$(whoami)'\AppData\Local\Programs\Julia-1.6.5\bin\julia.exe' --sysimage sys_daq.so --project main.jl
+$ 'C:\Users\Markus Petters\AppData\Local\Programs\Julia-1.6.5\bin\julia.exe' --sysimage sys_daq.so --project main.jl
 ```
 
  ![](doc/assets/gitbash_invoke.png)
