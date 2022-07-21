@@ -72,7 +72,11 @@ julia> <PRESS CTRL-d>
 [user@host src]$
 ```
 
-# Running the Program
+# Running the Program. 
+The data should follow this folder structure,  where "level 1" contains the raw data.  "level 2" and "level 3" will contain processed data. 
+level 1 (Raw data is in the form of set of drop images showing freezing events)
+level 2 (Processed Data: INP/L water (left) and activated fraction (right) plot, .csv file with drop centers and freezing temperature, .csv file with the activated fraction and INP concentration vs. temperature, as well as image files that indicate the selected drops, drop centers, accepted drops, and discarded drops)
+level 3 (Multiple spectra plot and temperature averaged files)
 
 To run the program from the shell run the following command:
 
@@ -89,11 +93,11 @@ Select a folder with drop images. For example ```exampledata/level 1/Experiment 
 
 ![](doc/assets/filepicker.png)
 
-In addition, fill out the metadata, including the operator, cooling rate, drop volume, and sample tag. Use the calendar to set the data of sample collection.
+In addition, fill out the metadata, including the operator, cooling rate, drop volume, and sample tag. Use the calendar to set the date of sample collection.
 
 ![](doc/assets/greeter_filled.png)
 
-Press ```Finished```. Next the software will parse the image and guess the location of each drop in the image. 
+After entering metadata, press ```Next```. Now the software will parse the image and guess the location of each drop in the image. 
 
 ```bash
 [user@host src]$ julia --project main.jl
@@ -107,7 +111,9 @@ The following screen will appear.
 
 Each red circle corresponds to an identified drop. Some drops are missing a circle, some drops have two or more circles.
 
-Click on a drop to manually add circles as needed. Toggle the switch on the top left of the header bar to off. Now clicks will remove the nearest neighbor circle. Remove all doublets (two in this image). If you remove too many circles, toggle and add them back in. You do not need to mark all circles. Removing a circle will effectively ignore the drop in the subsequent processing.
+1) Toggle add: to add a circle and 2) Toggle delete: to delete any circle if extra/inappropriately placed. If even a single circle is there towards the edge, just delete it and add a fresh one in the centre. Our aim is to have all red circles at the centre of a drop. Atleast try bringing them to the closest possible point near centre by either using Recalculate edges or manual toggling (add/delete).
+
+If you remove too many circles, toggle and add them back in. You do not need to mark all circles. Removing a circle will effectively ignore the drop in the subsequent processing.
 
 The figure to the right shows the identified edges. Depending on the image contrast, illumination, and droplet size, this edge detection may be insufficient, leading to too many edges and lots of false positive drop detection. The spin button with the value 25 is a hyper parameter that sets the spatial scale in the edge detection algorithm. You can change the value and press ```Recalculate Edges``` to try to improve the center detection. If it performs poorly, you can also press ```Delete All``` and then add all drops manually.
 
@@ -127,7 +133,7 @@ The following validation window will appear
 
 ![](doc/assets/validation1.png)
 
-The freeze detection tries to identify changes in the image that correspond to freezing. The triplets correspond to an image sequence with suspected freezing. The droplet should turn from clear to opaque either in the second or third image. Sometimes the freeze detection is in error. For example the second triplet in the left most column. These can be manually removed as false positives. Click on the triplet to remove it.
+The freeze detection tries to identify changes in the image that correspond to freezing (indicated by opaque drop). The triplets correspond to an image sequence with suspected freezing. The droplet should turn from clear to opaque either in the second or third image. Sometimes the freeze detection is an error. For example the second triplet in the left most column. These can be manually removed as false positives. Click twice on the triplet to remove it.
 
 A white line will appear and indicate that the drop is removed. Note that the first click has no effect and you will need to click twice. 
 
@@ -197,7 +203,7 @@ Change into the directory and invoke the Julia executable. You will need to adju
 
 ```bash
 $ cd Documents/DropFreezingDetection/src/
-$ 'C:\Users\Markus Petters\AppData\Local\Programs\Julia-1.6.5\bin\julia.exe' --project
+$ 'C:\Users\Markus Petters\AppData\Local\Program\Julia-1.6.5\bin\julia.exe' --project
 ```
 
 The program can now be invoked using 
@@ -219,7 +225,7 @@ The optimized installation can be called via
 
 ```bash
 $ cd Documents/DropFreezingDetection/src/
-$ 'C:\Users\Markus Petters\AppData\Local\Programs\Julia-1.6.5\bin\julia.exe' --sysimage sys_daq.so --project main.jl
+$ 'C:\Users\Markus Petters\AppData\Local\Program\Julia-1.6.5\bin\julia.exe' --sysimage sys_daq.so --project main.jl
 ```
 
  ![](doc/assets/gitbash_invoke.png)
