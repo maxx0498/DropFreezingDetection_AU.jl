@@ -156,7 +156,7 @@ Toggle the switch on the top bar to add/delete a circle.
 1) Toggle "ON": to add a circle. 
 2) Toggle "OFF": to delete any circle if extra/inappropriately placed.
 
-Bad or different contrast may result in poor edge detection. The image to the right shows the current output of the edge detection algorithm. Our aim is to have all red circles at the centre of a drop. Change the spatial scale parameter (value in the spin box) and press "Recalculate Edges" to improve the detection. Alternatively, press "Delete All" to delete all automatically detected drops and then place drop centers manually. 
+Bad or different contrast may result in poor edge detection. The image to the right shows the current output of the edge detection algorithm. Our aim is to have all red circles at the center of a drop. Change the spatial scale parameter (value in the spin box) and press "Recalculate Edges" to improve the detection. Alternatively, press "Delete All" to delete all automatically detected drops and then place drop centers manually. 
 
 Press "Next" after all drops are properly indicated with red circles.</property>
   </object>
