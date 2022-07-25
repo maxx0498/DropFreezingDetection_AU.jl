@@ -1,38 +1,82 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Generated with glade 3.22.1 -->
+<!-- Generated with glade 3.38.2 -->
 <interface>
   <requires lib="gtk+" version="3.24"/>
   <object class="GtkAdjustment" id="adjustment1">
     <property name="lower">1</property>
     <property name="upper">10</property>
     <property name="value">1</property>
-    <property name="step_increment">1</property>
-    <property name="page_increment">10</property>
+    <property name="step-increment">1</property>
+    <property name="page-increment">10</property>
   </object>
   <object class="GtkWindow" id="main">
-    <property name="can_focus">False</property>
+    <property name="can-focus">False</property>
     <property name="resizable">False</property>
+    <child>
+      <object class="GtkFixed">
+        <property name="visible">True</property>
+        <property name="can-focus">False</property>
+        <child>
+          <object class="GtkViewport" id="Image">
+            <property name="width-request">1200</property>
+            <property name="height-request">700</property>
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="shadow-type">none</property>
+            <child>
+              <placeholder/>
+            </child>
+          </object>
+        </child>
+      </object>
+    </child>
     <child type="titlebar">
       <object class="GtkHeaderBar">
         <property name="visible">True</property>
-        <property name="can_focus">False</property>
+        <property name="can-focus">False</property>
         <property name="title" translatable="yes">CIF-Cold-Stage</property>
-        <property name="subtitle" translatable="yes">Freeze Detection Validation</property>
-        <property name="has_subtitle">False</property>
+        <property name="has-subtitle">False</property>
         <child>
           <object class="GtkButton" id="helpbutton">
             <property name="label" translatable="yes">Help</property>
-            <property name="height_request">50</property>
+            <property name="height-request">50</property>
             <property name="visible">True</property>
-            <property name="can_focus">True</property>
-            <property name="receives_default">True</property>
-            <property name="always_show_image">True</property>
+            <property name="can-focus">True</property>
+            <property name="receives-default">True</property>
+            <property name="always-show-image">True</property>
           </object>
+        </child>
+        <child>
+          <object class="GtkButton" id="finishbutton">
+            <property name="label" translatable="yes">Finished</property>
+            <property name="height-request">50</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="receives-default">True</property>
+          </object>
+          <packing>
+            <property name="pack-type">end</property>
+            <property name="position">1</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkSpinButton" id="frame">
+            <property name="width-request">100</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="text" translatable="yes">1</property>
+            <property name="adjustment">adjustment1</property>
+            <property name="value">1</property>
+          </object>
+          <packing>
+            <property name="pack-type">end</property>
+            <property name="position">2</property>
+          </packing>
         </child>
         <child>
           <object class="GtkLabel">
             <property name="visible">True</property>
-            <property name="can_focus">False</property>
+            <property name="can-focus">False</property>
             <property name="label" translatable="yes">Delete</property>
           </object>
           <packing>
@@ -41,9 +85,9 @@
         </child>
         <child>
           <object class="GtkSwitch" id="adddrops">
-            <property name="height_request">0</property>
+            <property name="height-request">0</property>
             <property name="visible">True</property>
-            <property name="can_focus">True</property>
+            <property name="can-focus">True</property>
           </object>
           <packing>
             <property name="position">4</property>
@@ -52,57 +96,12 @@
         <child>
           <object class="GtkLabel">
             <property name="visible">True</property>
-            <property name="can_focus">False</property>
+            <property name="can-focus">False</property>
             <property name="label" translatable="yes">Add </property>
           </object>
           <packing>
             <property name="position">5</property>
           </packing>
-        </child>
-        <child>
-          <object class="GtkButton" id="finishbutton">
-            <property name="label" translatable="yes">Finished</property>
-            <property name="height_request">50</property>
-            <property name="visible">True</property>
-            <property name="can_focus">True</property>
-            <property name="receives_default">True</property>
-          </object>
-          <packing>
-            <property name="pack_type">end</property>
-            <property name="position">1</property>
-          </packing>
-        </child>
-        <child>
-          <object class="GtkSpinButton" id="frame">
-            <property name="width_request">100</property>
-            <property name="visible">True</property>
-            <property name="can_focus">True</property>
-            <property name="text" translatable="yes">1</property>
-            <property name="adjustment">adjustment1</property>
-            <property name="value">1</property>
-          </object>
-          <packing>
-            <property name="pack_type">end</property>
-            <property name="position">2</property>
-          </packing>
-        </child>
-      </object>
-    </child>
-    <child>
-      <object class="GtkFixed">
-        <property name="visible">True</property>
-        <property name="can_focus">False</property>
-        <child>
-          <object class="GtkViewport" id="Image">
-            <property name="width_request">1200</property>
-            <property name="height_request">700</property>
-            <property name="visible">True</property>
-            <property name="can_focus">False</property>
-            <property name="shadow_type">none</property>
-            <child>
-              <placeholder/>
-            </child>
-          </object>
         </child>
       </object>
     </child>
@@ -113,46 +112,46 @@
 Depending on the total number of drops, multiple frames will be displayed. Use the spin button next to the "Finished" to toggle between frames. Exit the dialog with the "Finished" button.</property>
   </object>
   <object class="GtkWindow" id="help">
-    <property name="width_request">0</property>
-    <property name="height_request">60</property>
-    <property name="can_focus">False</property>
+    <property name="width-request">0</property>
+    <property name="height-request">60</property>
+    <property name="can-focus">False</property>
     <property name="resizable">False</property>
+    <child>
+      <object class="GtkFixed">
+        <property name="visible">True</property>
+        <property name="can-focus">False</property>
+        <child>
+          <object class="GtkTextView">
+            <property name="width-request">600</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="editable">False</property>
+            <property name="wrap-mode">word</property>
+            <property name="left-margin">10</property>
+            <property name="right-margin">10</property>
+            <property name="top-margin">10</property>
+            <property name="bottom-margin">10</property>
+            <property name="indent">-1</property>
+            <property name="buffer">textbuffer1</property>
+          </object>
+        </child>
+      </object>
+    </child>
     <child type="titlebar">
       <object class="GtkHeaderBar">
         <property name="visible">True</property>
-        <property name="can_focus">False</property>
+        <property name="can-focus">False</property>
         <property name="title" translatable="yes">Help</property>
         <child>
           <object class="GtkButton" id="helpexit">
             <property name="label" translatable="yes">Close</property>
             <property name="visible">True</property>
-            <property name="can_focus">True</property>
-            <property name="receives_default">True</property>
+            <property name="can-focus">True</property>
+            <property name="receives-default">True</property>
           </object>
           <packing>
-            <property name="pack_type">end</property>
+            <property name="pack-type">end</property>
           </packing>
-        </child>
-      </object>
-    </child>
-    <child>
-      <object class="GtkFixed">
-        <property name="visible">True</property>
-        <property name="can_focus">False</property>
-        <child>
-          <object class="GtkTextView">
-            <property name="width_request">600</property>
-            <property name="visible">True</property>
-            <property name="can_focus">True</property>
-            <property name="editable">False</property>
-            <property name="wrap_mode">word</property>
-            <property name="left_margin">10</property>
-            <property name="right_margin">10</property>
-            <property name="top_margin">10</property>
-            <property name="bottom_margin">10</property>
-            <property name="indent">-1</property>
-            <property name="buffer">textbuffer1</property>
-          </object>
         </child>
       </object>
     </child>
