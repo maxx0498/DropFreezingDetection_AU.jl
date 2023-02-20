@@ -10,13 +10,12 @@ function getdatetime(f)
     return DateTime(String(b[3]), Dates.DateFormat("yyyymmddTHHMMSS"))
 end
 
-function extract_filename_data(bp)
+function extract_filename_data(bp; warmup = false)
     allfiles = @>> readdir(bp) filter(f -> f[end-2:end] == "jpg")
     allT = map(gettemp, allfiles)
     allDateTime = map(getdatetime, allfiles)
-    ii = allT .< -5.0
+    ii = (warmup == false) ? allT .< -1.0 : ((allT .< 4.0) .& (allT .> -1.0))
     files, t, T = allfiles[ii], allDateTime[ii], allT[ii]
-
     return files, t, T
 end
 
