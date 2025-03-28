@@ -14,7 +14,7 @@ function extract_filename_data(bp; warmup = false)
     allfiles = @>> readdir(bp) filter(f -> f[end-2:end] == "jpg")
     allT = map(gettemp, allfiles)
     allDateTime = map(getdatetime, allfiles)
-    ii = (warmup == false) ? allT .< -1.0 : ((allT .< 4.0) .& (allT .> -1.0))
+    ii = (warmup == false) ? allT .< 1.0 : ((allT .< 4.0) .& (allT .> -1.0))
     files, t, T = allfiles[ii], allDateTime[ii], allT[ii]
     return files, t, T
 end
@@ -40,7 +40,7 @@ function drawcircles(centers, image)
         ImageDraw.draw!(
             newimage,
             Ellipse(CirclePointRadius(c[2], c[1], 20; thickness = 15, fill = false)),
-            RGB{N0f8}(0.35, 0, 0),
+            RGB{N0f8}(1, 0, 0),
         )
     end
     return restrict(restrict(newimage))
